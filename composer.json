@@ -1,0 +1,23 @@
+{
+    "name": "mrehman23/sqs-queue",
+    "description": "PHP package for interacting with Amazon Simple Queue Service (SQS)",
+    "type": "library",
+    "keywords": ["aws", "sqs", "messenger", "php"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mati ur Rehman",
+            "email": "m_rehman24@yahoo.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "aws/aws-sdk-php": "^3.0"
+    },
+    "autoload":{
+        "psr-4":{
+            "SqsSimple\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"  
+}
