@@ -5,7 +5,7 @@ namespace KdAwsSqs;
 
 use Aws\Exception\AwsException;
 
-class AwsSqsMessenger extends SqsBase
+class AwsSqsMessenger extends AwsSqsBase
 {
     public $retryTimesOnFail = 2;
     public $waitBeforeRetry = 1;
