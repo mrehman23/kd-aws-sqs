@@ -51,4 +51,18 @@ $messageDeduplicationId = '';
 $messenger->publish( $queue, $message, $messageAttributes, $delaySeconds, $messageGroupId, $messageDeduplicationId);
 ```
 
+### Listener
+```
+<?php
+
+require 'vendor/autoload.php';
+use SqsSimple\SqsWorker;
+
+$worker = new SqsWorker($this->awsConfig['credentials']);
+$worker->listen(
+    $this->awsConfig['queue'],
+    [$this, 'processMessage'],
+    [$this, 'errorHandler']
+);
+
 
