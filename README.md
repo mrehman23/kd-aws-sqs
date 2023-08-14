@@ -9,7 +9,6 @@ This package provides a simple and convenient way to interact with Amazon Simple
 - Send messages to an SQS queue.
 - Receive messages from an SQS queue.
 - Delete messages from an SQS queue.
-- ... (List any additional features your package offers)
 
 ## Requirements
 
