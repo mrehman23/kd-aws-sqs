@@ -1,17 +1,17 @@
 <?php
 
-namespace KdSqs;
+namespace KdAwsSqs;
 
 use Aws\Credentials\Credentials;
 use Aws\Sdk;
 use Aws\Sqs\SqsClient;
 
-class SqsBase
+class AwsSqsBase
 {
     public $sqsClient = null;
 
     /**
-     * SqsBase constructor.
+     * AwsSqsBase constructor.
      *
      * @param array $awsConfig
      */
