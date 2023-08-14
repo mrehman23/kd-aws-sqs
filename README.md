@@ -27,8 +27,6 @@ composer require mrehman23/sqs-queue
 
 ## Examples
 ```
-use SqsSimple\SqsMessenger;
-
 require 'vendor/autoload.php';
 use SqsSimple\SqsMessenger;
 $AwsConfig = [
@@ -38,23 +36,22 @@ $AwsConfig = [
     'API_VERSION'=>'2012-11-05'
 ];
 $messenger = new SqsMessenger($AwsConfig);
-/* if a publish message request fails then it will retry again */
 // $messenger->RetryTimesOnFail = 2;
-/* seconds to wait after failed request to retry again */
 // $messenger->WaitBeforeRetry = 1; //seconds
 $queue = "<Your queueUrl>";
 $message = "This is a message for SQS";
-$messageAttributes = [];
+$messageAttributes['params'] = [
+    'DataType' => 'String',
+    'StringValue' => json_encode($params)
+];
 $delaySeconds = 10;
 $messageGroupId = '';
 $messageDeduplicationId = '';
-$messenger->publish( $queue, $message, $messageAttributes, $delaySeconds, $messageGroupId, $messageDeduplicationId);
+$result = $messenger->publish($queue, $message, $messageAttributes, $delaySeconds, $messageGroupId, $messageDeduplicationId);
 ```
 
 ### Listener
 ```
-<?php
-
 require 'vendor/autoload.php';
 use SqsSimple\SqsWorker;
 
