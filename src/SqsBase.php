@@ -1,6 +1,6 @@
 <?php
 
-namespace SqsSimple;
+namespace KdSqs;
 
 use Aws\Credentials\Credentials;
 use Aws\Sdk;
