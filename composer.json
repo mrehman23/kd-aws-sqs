@@ -1,5 +1,5 @@
 {
-    "name": "mrehman23/sqs-queue",
+    "name": "mrehman23/kd-aws-sqs",
     "description": "PHP package for interacting with Amazon Simple Queue Service (SQS)",
     "type": "library",
     "keywords": ["aws", "sqs", "messenger", "php"],
